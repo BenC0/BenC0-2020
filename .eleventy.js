@@ -12,9 +12,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
 
-  //Watching for modificaions in css directory
-  sass('./css/index.scss', './_site/css/index.css');
-
   eleventyConfig.setDataDeepMerge(true);
 
   eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
@@ -42,6 +39,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("js");
+
+  //Watching for modificaions in css directory
+  sass('./css/index.scss', './_site/css/index.css');
 
   /* Markdown Overrides */
   let markdownLibrary = markdownIt({
