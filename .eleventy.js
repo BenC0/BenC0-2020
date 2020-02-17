@@ -5,12 +5,16 @@ const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
-const sass = require('./_11ty/sass-process');
+const sass = require('sass');
+const fsE = require('fs-extra');
+const path = require('path');
 
 module.exports = function(eleventyConfig) {
-//   //Watching for modificaions in css directory
-//   sass('./css/index.scss', './css/index.css');
-  
+  //Encapsulate rendered css from scssPath into result variable
+  const scss = sass.renderSync({file: './css/index.scss'});
+  //Create cssPath directory recursively
+  fsE.writeFile('./css/index.css', scss.css.toString())
+
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
