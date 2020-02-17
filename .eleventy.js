@@ -8,6 +8,9 @@ const markdownItAnchor = require("markdown-it-anchor");
 const sass = require('./_11ty/sass-process');
 
 module.exports = function(eleventyConfig) {
+  //Watching for modificaions in css directory
+  sass('./css/index.scss', './css/index.css');
+  
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
@@ -39,9 +42,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("js");
-
-  //Watching for modificaions in css directory
-  sass('./css/index.scss', './_site/css/index.css');
 
   /* Markdown Overrides */
   let markdownLibrary = markdownIt({
