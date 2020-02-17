@@ -1,0 +1,141 @@
+// font palette
+$maastright-blue: #011627;
+$baby-powder: #fdfffc;
+$maximum-blue-green: #2ec4b6;
+$rose-madder:  #e71d36;
+$bright-yellow: #ff9f1c;
+// background palette
+$japanese-indigo: #264653;
+$jungle-green: #2a9d8f;
+$light-red-ochre: #e76f51;
+$hansa-yellow: #e9c46a;
+$sandy-brown: #f4a261;
+$black: #111111;
+$white: #f0e6e6;
+
+$header-font: 'Fredoka One', cursive;
+$copy-font: 'Comfortaa', cursive;
+$copy-font-weight: 300;
+
+
+	
+:root {
+	// theme-colors
+	--theme-1-font: #{$black};
+	--theme-1-background: #{$white};
+	--theme-2-font: #{$white};
+	--theme-2-background: #{$sandy-brown};
+	--theme-3-font: #{$white};
+	--theme-3-background: #{$light-red-ochre};
+	--theme-4-font: #{$rose-madder};
+	--theme-4-background: #{$hansa-yellow};
+	--theme-5-font: #{$maastright-blue};
+	--theme-5-background: #{$jungle-green};
+	--theme-6-font: #{$maximum-blue-green};
+	--theme-6-background: #{$japanese-indigo};
+	--header-font: #{$header-font};
+	--copy-font: #{$copy-font};
+	--copy-font-weight: #{$copy-font-weight};
+	--body-layout-cols: 10px 2fr 10px 1fr 10px;
+	--grid-layout-cols: repeat(8, 1fr);
+	--grid-layout-cols-gap: 15px;
+	
+	--background-gradient: #{$white};
+}
+
+body {
+	display: grid;
+	padding: 10px 0;
+	font-size: 24px;
+	min-height: 100vh;
+	background: $black;
+	box-sizing: border-box;
+	grid-template-columns: var(--body-layout-cols);
+	
+	@media screen and (max-width: 768px) {
+		--body-layout-cols: 10px 1fr 10px;
+	}
+	
+	font-family: var(--copy-font);
+	font-weight: var(--copy-font-weight);
+	
+	h1, h2, h3, h4, h5, h6 {
+		font-family: var(--header-font);
+		font-size: 48px;
+	}
+}
+
+.container {
+	display: grid;
+	overflow: hidden;
+	border-radius: 4px;
+	position: relative;
+	transition: all .25s ease-in;	
+	grid-column-gap: var(--grid-layout-cols-gap);
+	grid-template-columns: var(--grid-layout-cols);
+	
+	&.desktop {
+		grid-column: 2;
+		@media screen and (max-width: 768px) {
+			display: none;
+		}
+	}
+	
+	&.mobile {
+		grid-column: 4;
+		@media screen and (max-width: 768px) {
+			grid-column: 2;
+		}
+	}
+	
+	&::before {
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 1;
+		content: "";
+		opacity: .2;
+		position: absolute;
+		transition: all .25s ease-in;	
+		background: linear-gradient(10deg, transparent, var(--background-gradient));
+	}
+	
+	.content {
+		z-index: 2;
+		position: relative;
+		text-align: center;
+		align-self: center;
+		justify-self: center;
+		grid-column:  3 / span 4;
+	}
+	
+	[theme="1"] & {
+		--background-gradient: #{$black};
+		color: var(--theme-1-font);
+		background: var(--theme-1-background);
+	}
+	[theme="2"] & {
+		--background-gradient: #{$black};
+		color: var(--theme-2-font);
+		background: var(--theme-2-background);
+	}
+	[theme="3"] & {
+		--background-gradient: #{$black};
+		color: var(--theme-3-font);
+		background: var(--theme-3-background);
+	}
+	[theme="4"] & {
+		color: var(--theme-4-font);
+		background: var(--theme-4-background);
+	}
+	[theme="5"] & {
+		--background-gradient: #{$black};
+		color: var(--theme-5-font);
+		background: var(--theme-5-background);
+	}
+	[theme="6"] & {
+		color: var(--theme-6-font);
+		background: var(--theme-6-background);
+	}
+}
