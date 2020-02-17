@@ -78,8 +78,6 @@ module.exports = function(eleventyConfig) {
     // pathPrefix: "/",
 
     markdownTemplateEngine: "liquid",
-    htmlTemplateEngine: "njk",
-    dataTemplateEngine: "njk",
 
     // These are all optional, defaults are shown:
     dir: {
