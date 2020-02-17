@@ -8,8 +8,8 @@ const markdownItAnchor = require("markdown-it-anchor");
 const sass = require('./_11ty/sass-process');
 
 module.exports = function(eleventyConfig) {
-  //Watching for modificaions in css directory
-  sass('./css/index.scss', './css/index.css');
+//   //Watching for modificaions in css directory
+//   sass('./css/index.scss', './css/index.css');
   
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);

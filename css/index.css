@@ -1,0 +1,116 @@
+:root {
+  --theme-1-font: #111111;
+  --theme-1-background: #f0e6e6;
+  --theme-2-font: #f0e6e6;
+  --theme-2-background: #f4a261;
+  --theme-3-font: #f0e6e6;
+  --theme-3-background: #e76f51;
+  --theme-4-font: #e71d36;
+  --theme-4-background: #e9c46a;
+  --theme-5-font: #011627;
+  --theme-5-background: #2a9d8f;
+  --theme-6-font: #2ec4b6;
+  --theme-6-background: #264653;
+  --header-font: Fredoka One, cursive;
+  --copy-font: Comfortaa, cursive;
+  --copy-font-weight: 300;
+  --body-layout-cols: 10px 2fr 10px 1fr 10px;
+  --grid-layout-cols: repeat(8, 1fr);
+  --grid-layout-cols-gap: 15px;
+  --background-gradient: #f0e6e6;
+}
+
+body {
+  display: grid;
+  padding: 10px 0;
+  font-size: 24px;
+  min-height: 100vh;
+  background: #111111;
+  box-sizing: border-box;
+  grid-template-columns: var(--body-layout-cols);
+  font-family: var(--copy-font);
+  font-weight: var(--copy-font-weight);
+}
+@media screen and (max-width: 768px) {
+  body {
+    --body-layout-cols: 10px 1fr 10px;
+  }
+}
+body h1, body h2, body h3, body h4, body h5, body h6 {
+  font-family: var(--header-font);
+  font-size: 48px;
+}
+
+.container {
+  display: grid;
+  overflow: hidden;
+  border-radius: 4px;
+  position: relative;
+  transition: all 0.25s ease-in;
+  grid-column-gap: var(--grid-layout-cols-gap);
+  grid-template-columns: var(--grid-layout-cols);
+}
+.container.desktop {
+  grid-column: 2;
+}
+@media screen and (max-width: 768px) {
+  .container.desktop {
+    display: none;
+  }
+}
+.container.mobile {
+  grid-column: 4;
+}
+@media screen and (max-width: 768px) {
+  .container.mobile {
+    grid-column: 2;
+  }
+}
+.container::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  content: "";
+  opacity: 0.2;
+  position: absolute;
+  transition: all 0.25s ease-in;
+  background: linear-gradient(10deg, transparent, var(--background-gradient));
+}
+.container .content {
+  z-index: 2;
+  position: relative;
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+  grid-column: 3/span 4;
+}
+[theme="1"] .container {
+  --background-gradient: #111111;
+  color: var(--theme-1-font);
+  background: var(--theme-1-background);
+}
+[theme="2"] .container {
+  --background-gradient: #111111;
+  color: var(--theme-2-font);
+  background: var(--theme-2-background);
+}
+[theme="3"] .container {
+  --background-gradient: #111111;
+  color: var(--theme-3-font);
+  background: var(--theme-3-background);
+}
+[theme="4"] .container {
+  color: var(--theme-4-font);
+  background: var(--theme-4-background);
+}
+[theme="5"] .container {
+  --background-gradient: #111111;
+  color: var(--theme-5-font);
+  background: var(--theme-5-background);
+}
+[theme="6"] .container {
+  color: var(--theme-6-font);
+  background: var(--theme-6-background);
+}
