@@ -5,16 +5,14 @@ const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
+const sassWatch = require('./_11ty/sass-process');
 const sass = require('sass');
 const fsE = require('fs-extra');
 const path = require('path');
 
-module.exports = function(eleventyConfig) {
-  //Encapsulate rendered css from scssPath into result variable
-  const scss = sass.renderSync({file: './css/index.scss'});
-  //Create cssPath directory recursively
-  fsE.writeFile('./css/index.css', scss.css.toString())
+const __LOCAL__ = true
 
+module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
@@ -47,6 +45,15 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("js");
 
+  if (__LOCAL__) {
+    sassWatch('./css/index.scss', './_site/css/index.css')
+  } else {
+    //Encapsulate rendered css from scssPath into result variable
+    const scss = sass.renderSync({file: './_site/css/index.scss'});
+    //Create cssPath directory recursively
+    fsE.writeFile('./css/index.css', scss.css.toString())
+  }
+
   /* Markdown Overrides */
   let markdownLibrary = markdownIt({
     html: true,
@@ -76,8 +83,6 @@ module.exports = function(eleventyConfig) {
 
     // You can also pass this in on the command line using `--pathprefix`
     // pathPrefix: "/",
-
-    markdownTemplateEngine: "liquid",
 
     // These are all optional, defaults are shown:
     dir: {

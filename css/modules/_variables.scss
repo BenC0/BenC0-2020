@@ -1,0 +1,42 @@
+// font palette
+$maastright-blue: #011627;
+$baby-powder: #fdfffc;
+$maximum-blue-green: #2ec4b6;
+$rose-madder:  #e71d36;
+$bright-yellow: #ff9f1c;
+// background palette
+$japanese-indigo: #264653;
+$jungle-green: #2a9d8f;
+$light-red-ochre: #e76f51;
+$hansa-yellow: #e9c46a;
+$sandy-brown: #f4a261;
+$black: #111111;
+$white: #f0e6e6;
+
+$header-font: 'Fredoka One', cursive;
+$copy-font: 'Comfortaa', cursive;
+$copy-font-weight: 300;
+
+:root {
+	// theme-colors
+	--theme-1-font: #{$black};
+	--theme-1-background: #{$white};
+	--theme-2-font: #{$white};
+	--theme-2-background: #{$sandy-brown};
+	--theme-3-font: #{$white};
+	--theme-3-background: #{$light-red-ochre};
+	--theme-4-font: #{$rose-madder};
+	--theme-4-background: #{$hansa-yellow};
+	--theme-5-font: #{$maastright-blue};
+	--theme-5-background: #{$jungle-green};
+	--theme-6-font: #{$maximum-blue-green};
+	--theme-6-background: #{$japanese-indigo};
+	--header-font: #{$header-font};
+	--copy-font: #{$copy-font};
+	--copy-font-weight: #{$copy-font-weight};
+	--body-layout-cols: 10px 1fr 10px;
+	--grid-layout-cols: repeat(8, 1fr);
+	--grid-layout-cols-gap: 15px;
+	
+	--background-gradient: #{$white};
+}
