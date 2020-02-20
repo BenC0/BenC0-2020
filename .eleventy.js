@@ -12,6 +12,13 @@ const path = require('path');
 
 const __LOCAL__ = true
 
+function run_sass(scssPath, cssPath) {
+    //Encapsulate rendered css from scssPath into result variable
+    const scss = sass.renderSync({file: scssPath});
+    //Create cssPath directory recursively
+    fsE.writeFile(cssPath, scss.css.toString())
+}
+
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
@@ -47,11 +54,10 @@ module.exports = function(eleventyConfig) {
 
   if (__LOCAL__) {
     sassWatch('./css/index.scss', './_site/css/index.css')
+    sassWatch('./css/shell.scss', './_site/css/shell.css')
   } else {
-    //Encapsulate rendered css from scssPath into result variable
-    const scss = sass.renderSync({file: './_site/css/index.scss'});
-    //Create cssPath directory recursively
-    fsE.writeFile('./css/index.css', scss.css.toString())
+    run_sass('./_site/css/index.scss', './css/index.css')
+    run_sass('./_site/css/shell.scss', './css/shell.css')
   }
 
   /* Markdown Overrides */

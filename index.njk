@@ -1,5 +1,9 @@
 {% extends "./_includes/shell.njk" %}
 
+{% block styles %}
+	{{ super() }}
+	<link rel="stylesheet" href="{{ '/css/index.css' | url }}">
+{% endblock %}
+
 {% block content %}
-	{% include "./_includes/modules/concept/demo-content.njk" %}
 {% endblock %}
