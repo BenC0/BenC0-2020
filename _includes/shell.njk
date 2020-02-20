@@ -10,9 +10,12 @@
 	{% endblock %}
 </head>
 <body theme="5">
-	{% block content %}
-		<h1>404</h1>
-	{% endblock %}
+	{% include "./modules/header.njk" %}
+	<section id="main">
+		{% block content %}
+			<h1>404</h1>
+		{% endblock %}
+	</section>
 	<script src="{{ '/js/index.js' | url }}"></script>
 </body>
 </html>
