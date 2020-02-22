@@ -6,11 +6,13 @@
 	<title>{{ renderData.title or title or metadata.title }}</title>
 	<meta name="Description" content="{{ renderData.description or description or metadata.description }}">
 	{% block styles %}
+		<link rel="stylesheet" href="{{ '/css/shell.css' | url }}">
 		<link href="https://fonts.googleapis.com/css?family=Comfortaa:300|Fredoka+One&display=swap" rel="stylesheet">
 	{% endblock %}
 </head>
-<body theme="5">
+<body nav="inactive" theme="night">
 	{% include "./modules/header.njk" %}
+	{% include "./modules/menu.njk" %}
 	<section id="main">
 		{% block content %}
 			<h1>404</h1>
