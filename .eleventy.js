@@ -10,7 +10,7 @@ const sass = require('sass');
 const fsE = require('fs-extra');
 const path = require('path');
 
-const __LOCAL__ = true
+const __LOCAL__ = false
 
 function run_sass(scssPath, cssPath) {
     //Encapsulate rendered css from scssPath into result variable
