@@ -1,10 +1,12 @@
 body {
 	display: grid;
-	padding: 10px 0;
 	font-size: 24px;
 	min-height: 100vh;
-	background: $black;
+	padding: 10vh 0 10px;
 	box-sizing: border-box;
+	color: var(--font-color);
+	transition: var(--theme-transition);
+	background: var(--background);
 	grid-template-columns: var(--body-layout-cols);
 	
 	@media screen and (max-width: 768px) {
@@ -19,36 +21,26 @@ body {
 		margin-bottom: 35px;
 		font-family: var(--header-font);
 	}
-	
-	&[theme="1"] {
-		--background-gradient: #{$black};
-		color: var(--theme-1-font);
-		background: var(--theme-1-background);
-	}
-	&[theme="2"] {
-		--background-gradient: #{$black};
-		color: var(--theme-2-font);
-		background: var(--theme-2-background);
-	}
-	&[theme="3"] {
-		--background-gradient: #{$black};
-		color: var(--theme-3-font);
-		background: var(--theme-3-background);
-	}
-	&[theme="4"] {
-		color: var(--theme-4-font);
-		background: var(--theme-4-background);
-	}
-	&[theme="5"] {
-		--background-gradient: #{$black};
-		color: var(--theme-5-font);
-		background: var(--theme-5-background);
-	}
-	&[theme="6"] {
-		color: var(--theme-6-font);
-		background: var(--theme-6-background);
+
+	* {
+		box-sizing: border-box;
 	}
 	
+	&[theme="night"] {
+		--font-color: var(--theme-1-font);
+		--background-gradient: #{$baby-powder};
+		--background: var(--theme-1-background);
+		--action-bar: var(--theme-1-action-bar);
+		--inactive-background: var(--theme-2-background);
+	}
+	&[theme="day"] {
+		--background-gradient: #{$black};
+		--font-color: var(--theme-2-font);
+		--background: var(--theme-2-background);
+		--action-bar: var(--theme-2-action-bar);
+		--inactive-background: var(--theme-1-background);
+	}
+
 	&::before {
 		top: 0;
 		left: 0;
@@ -56,7 +48,7 @@ body {
 		bottom: 0;
 		z-index: 0;
 		content: "";
-		opacity: .2;
+		opacity: .1;
 		position: absolute;
 		transition: all .25s ease-in;	
 		background: linear-gradient(10deg, transparent, var(--background-gradient));

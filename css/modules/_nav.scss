@@ -1,0 +1,121 @@
+@import "./variables";
+
+nav {
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 0 1em;
+	display: flex;
+	position: fixed;
+	background: var(--action-bar);
+	justify-content: space-between;
+	transition: var(--theme-transition);
+
+	@include card(1);
+
+	.theme_swapper {
+		width: 72px;
+		position: relative;
+		--swatch-size: 24px;
+		--active-swatch: 1px solid #{$baby-powder};
+
+		.swatch {
+			left: 0;
+			top: 50%;
+			position: absolute;
+			border-radius: 4px;
+
+			width: var(--swatch-size);
+			height: var(--swatch-size);
+
+			&:first-child {
+				transform: translate(0, -75%);
+				background: var(--inactive-background);
+			}
+			&:last-child {
+				border: var(--active-swatch);
+				background: var(--background);
+				transform: translate(50%, -25%);
+				@include card(1);
+			}
+		}
+	}
+
+	.menu {
+		flex-grow: 0;
+		cursor: pointer;
+		font-size: 0px;
+
+		--active-menu-size: 44px;
+		--inactive-menu-size: 8px;
+		--menu-transition: flex-grow .15s ease-in .3s,
+							width .15s ease-in .3s,
+							height .15s ease-out .15s,
+							font-size .15s ease-out;
+		transition: var(--menu-transition);
+		padding: 15px 20px;
+
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+
+		li {
+			margin-bottom: 5px;
+			border-radius: 4px;
+			background: #{$baby-powder};
+
+			text-align: center;
+			transition: var(--menu-transition);
+			height: var(--inactive-menu-size);
+			width: var(--inactive-menu-size);
+			@include card(1);
+			position: relative;
+
+			&::after {
+				content: "";
+				top: 0;
+				border-radius: 4px;
+				bottom: 0;
+				left: calc(100%);
+				z-index: -1;
+				position: absolute;
+				background: #{$baby-powder};
+				width: 0;
+				transition: all .15s ease-in-out .3s;
+			}
+
+			a {
+				opacity: 0;
+				text-decoration: none;
+				color: var(--inactive-background);
+				transition: var(--menu-transition);
+				line-height: var(--inactive-menu-size);
+			}
+		}
+
+		[nav="active"] & {
+			--menu-transition: flex-grow .15s ease-in,
+								width .15s ease-in,
+								height .15s ease-out .15s,
+								font-size .15s ease-out .3s;
+			flex-grow: 1;
+			font-size: .75em; 
+
+			li {
+				width: 100%;
+				height: var(--active-menu-size);
+
+				a {
+					opacity: 1;
+					line-height: var(--active-menu-size);
+				}
+
+				&::after {
+					transition: all .15s ease-in-out;
+					left: calc(100% + 5px);
+					width: var(--inactive-menu-size);
+				}
+			}
+		}
+	}
+}

@@ -5,12 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{{ renderData.title or title or metadata.title }}</title>
 	<meta name="Description" content="{{ renderData.description or description or metadata.description }}">
+	<meta name="theme-color" content="#011627">
 	{% block styles %}
 		<link rel="stylesheet" href="{{ '/css/shell.css' | url }}">
 		<link href="https://fonts.googleapis.com/css?family=Comfortaa:300|Fredoka+One&display=swap" rel="stylesheet">
 	{% endblock %}
 </head>
-<body nav="inactive" theme="night">
+<body nav="inactive" theme="day">
 	{% include "./modules/header.njk" %}
 	{% include "./modules/menu.njk" %}
 	<section id="main">

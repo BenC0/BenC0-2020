@@ -1,16 +1,17 @@
 <nav>
-	<section class="building">
-		<div class="window cv">
+	<div class="theme_swapper">
+		<div class="swatch"></div>
+		<div class="swatch"></div>
+	</div>
+	<ul class="menu">
+		<li class="window cv">
 			<a href="{{ '/cv' | url }}">CV</a>
-		</div>
-		<div class="window blog">
+		</li>
+		<li class="window blog">
 			<a href="{{ '/blog' | url }}">Blog</a>
-		</div>
-		<div class="window projects">
+		</li>
+		<li class="window projects">
 			<a href="{{ '/projects' | url }}">Projects</a>
-		</div>
-		{% for i in range(0, 9) -%}
-			<div class="window no_show"></div>
-		{%- endfor %}
-	</section>
+		</li>
+	</ul>
 </nav>

@@ -1,0 +1,26 @@
+:root {
+	--font-color: #{$baby-powder};
+	--background: #{$white};
+	--action-bar: #{$black};
+	--inactive-background: #{$black};
+	// theme-colors
+	--theme-1-font: #{$baby-powder};
+	--theme-1-background: #{$maastright-blue};
+	--theme-1-action-bar: #{$japanese-indigo};
+
+	--theme-2-font: #{$maastright-blue};
+	--theme-2-background: #{$jungle-green};
+	--theme-2-action-bar: #{$maximum-blue-green};
+
+	--header-font: #{$header-font};
+	--copy-font: #{$copy-font};
+	--copy-font-weight: #{$copy-font-weight};
+
+	--body-layout-cols: 10px 1fr 10px;
+	--grid-layout-cols: repeat(8, 1fr);
+	--grid-layout-cols-gap: 15px;
+	
+	--background-gradient: #{$white};
+
+	--theme-transition: all .35s ease-in;
+}
