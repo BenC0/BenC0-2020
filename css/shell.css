@@ -126,7 +126,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   --grid-layout-cols: repeat(8, 1fr);
   --grid-layout-cols-gap: 15px;
   --background-gradient: #f0e6e6;
-  --theme-transition: all .35s ease-in;
+  --theme-transition: all .15s ease-out;
 }
 
 body {
