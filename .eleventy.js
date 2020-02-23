@@ -56,8 +56,8 @@ module.exports = function(eleventyConfig) {
     sassWatch('./css/index.scss', './_site/css/index.css')
     sassWatch('./css/shell.scss', './_site/css/shell.css')
   } else {
-    run_sass('./_site/css/index.scss', './css/index.css')
-    run_sass('./_site/css/shell.scss', './css/shell.css')
+    run_sass('./css/index.scss', './_site/css/index.css')
+    run_sass('./css/shell.scss', './_site/css/shell.css')
   }
 
   /* Markdown Overrides */
