@@ -10,7 +10,7 @@ const sass = require('sass');
 const fsE = require('fs-extra');
 const path = require('path');
 
-const __LOCAL__ = false
+const __LOCAL__ = true
 
 function run_sass(scssPath, cssPath) {
     //Encapsulate rendered css from scssPath into result variable
@@ -53,11 +53,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("js");
 
   if (__LOCAL__) {
-    sassWatch('./css/index.scss', './_site/css/index.css')
-    sassWatch('./css/shell.scss', './_site/css/shell.css')
+    sassWatch('./scss/index.scss', './css/index.css')
+    sassWatch('./scss/shell.scss', './css/shell.css')
   } else {
-    run_sass('./css/index.scss', './_site/css/index.css')
-    run_sass('./css/shell.scss', './_site/css/shell.css')
+    run_sass('./scss/index.scss', './_site/css/index.css')
+    run_sass('./scss/shell.scss', './_site/css/shell.css')
   }
 
   /* Markdown Overrides */
