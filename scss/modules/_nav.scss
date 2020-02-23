@@ -4,17 +4,23 @@ nav {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	padding: 0 1em;
-	display: flex;
 	position: fixed;
+	@include card(1);
 	background: var(--action-bar);
-	justify-content: space-between;
 	transition: var(--theme-transition);
 
-	@include card(1);
+	.content {
+		width: 100%;
+		display: flex;
+		margin: 0 auto;
+		padding: 0 1em;
+		max-width: 600px;
+		justify-content: space-between;
+	}
 
 	.theme_swapper {
 		width: 72px;
+		cursor: pointer;
 		position: relative;
 		--swatch-size: 24px;
 		--active-swatch: 1px solid #{$baby-powder};
@@ -22,6 +28,7 @@ nav {
 		.swatch {
 			left: 0;
 			top: 50%;
+			cursor: pointer;
 			position: absolute;
 			border-radius: 4px;
 

@@ -49,11 +49,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection("tagList", require("./_11ty/getTagList"));
 
   if (__LOCAL__) {
-    sassWatch('./css/index.scss', './css/index.css')
-    sassWatch('./css/shell.scss', './css/shell.css')
+    sassWatch('./scss/index.scss', './css/index.css')
+    sassWatch('./scss/shell.scss', './css/shell.css')
   } else {
-    run_sass('./css/index.scss', './css/index.css')
-    run_sass('./css/shell.scss', './css/shell.css')
+    run_sass('./scss/index.scss', './_site/css/index.css')
+    run_sass('./scss/shell.scss', './_site/css/shell.css')
   }
 
   eleventyConfig.addPassthroughCopy("img");
