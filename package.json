@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "BenC0 site 2020 edition",
   "scripts": {
-    "build": "eleventy",
-    "watch": "eleventy --watch",
-    "serve": "eleventy --serve",
-    "debug": "DEBUG=* eleventy"
+    "build": "set enviro=production&& eleventy",
+    "watch": "set enviro=local&& eleventy --watch",
+    "serve": "set enviro=local&& eleventy --serve",
+    "debug": "set enviro=production&& DEBUG=* eleventy"
   },
   "repository": {
     "type": "git",

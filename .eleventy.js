@@ -48,7 +48,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addCollection("tagList", require("./_11ty/getTagList"));
 
-  if (__LOCAL__) {
+  if (process.env.enviro === "local") {
     sassWatch('./scss/index.scss', './css/index.css')
     sassWatch('./scss/shell.scss', './css/shell.css')
   } else {
