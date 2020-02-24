@@ -25,6 +25,11 @@ body {
 	* {
 		box-sizing: border-box;
 	}
+
+	p {
+		line-height: 1.5;
+		margin-bottom: 1em;
+	}
 	
 	&[theme="night"] {
 		--font-color: var(--theme-1-font);
@@ -50,6 +55,7 @@ body {
 		content: "";
 		opacity: .1;
 		position: absolute;
+		pointer-events: none;
 		transition: all .25s ease-in;	
 		background: linear-gradient(10deg, transparent, var(--background-gradient));
 	}

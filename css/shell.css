@@ -155,6 +155,10 @@ body h1, body h2, body h3, body h4, body h5, body h6 {
 body * {
   box-sizing: border-box;
 }
+body p {
+  line-height: 1.5;
+  margin-bottom: 1em;
+}
 body[theme=night] {
   --font-color: var(--theme-1-font);
   --background-gradient: #fdfffc;
@@ -178,6 +182,7 @@ body::before {
   content: "";
   opacity: 0.1;
   position: absolute;
+  pointer-events: none;
   transition: all 0.25s ease-in;
   background: linear-gradient(10deg, transparent, var(--background-gradient));
 }
