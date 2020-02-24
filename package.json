@@ -5,7 +5,8 @@
   "scripts": {
     "build": "set enviro=production&& eleventy",
     "watch": "set enviro=local&& eleventy --watch",
-    "serve": "set enviro=local&& eleventy --serve",
+    "scss": "node-sass --watch \"./scss\" -o \"./css\"",
+    "serve": "set enviro=local&& concurrently \"npm run scss\" \"eleventy --serve\"",
     "debug": "set enviro=production&& DEBUG=* eleventy"
   },
   "repository": {
@@ -28,7 +29,9 @@
     "markdown-it-anchor": "^5.2.5"
   },
   "dependencies": {
+    "concurrently": "^5.1.0",
     "fs-extra": "^8.1.0",
+    "node-sass": "^4.13.1",
     "path": "^0.12.7",
     "sass": "^1.25.0"
   }
