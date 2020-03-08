@@ -1,0 +1,10 @@
+{% extends "../_includes/shell.njk" %}
+
+{% block styles %}
+	{{ super() }}
+	<link rel="stylesheet" href="{{ '/css/cv.css' | url }}">
+{% endblock %}
+
+{% block content %}
+	{% include "../_includes/modules/cv/cv-content.njk" %}
+{% endblock %}

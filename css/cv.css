@@ -1,0 +1,5 @@
+.content {
+  display: flex; }
+  #main .content {
+    text-align: center;
+    flex-direction: column; }

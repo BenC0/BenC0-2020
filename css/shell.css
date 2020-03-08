@@ -89,9 +89,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   --background: #f0e6e6;
   --action-bar: #111111;
   --inactive-background: #111111;
-  --theme-1-font: #fdfffc;
-  --theme-1-background: #011627;
-  --theme-1-action-bar: #264653;
+  --theme-1-font: #011627;
+  --theme-1-background: #fdfffc;
+  --theme-1-action-bar: #011627;
   --theme-2-font: #011627;
   --theme-2-background: #2a9d8f;
   --theme-2-action-bar: #2ec4b6;
@@ -109,7 +109,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 body {
   padding: 0;
   display: grid;
-  font-size: 24px;
+  font-size: 16px;
   min-height: 100vh;
   box-sizing: border-box;
   color: var(--font-color);
@@ -124,13 +124,25 @@ body {
     body {
       --body-layout-cols: 10px 1fr 10px; } }
   body h1, body h2, body h3, body h4, body h5, body h6 {
-    font-size: 48px;
-    margin-bottom: 35px;
+    margin-bottom: 1em;
     font-family: var(--header-font); }
+  body h1 {
+    font-size: 2em; }
+  body h2 {
+    font-size: 1.9em; }
+  body h3 {
+    font-size: 1.8em; }
+  body h4 {
+    font-size: 1.7em; }
+  body h5 {
+    font-size: 1.6em; }
+  body h6 {
+    font-size: 1.5em; }
   body * {
     box-sizing: border-box; }
   body p {
     line-height: 2;
+    font-size: 1em;
     margin-bottom: 1em; }
   body[theme="night"] {
     --font-color: var(--theme-1-font);
@@ -169,7 +181,8 @@ header {
   grid-column: 1 / span 3;
   justify-content: center; }
   header h1 {
-    margin: 0; }
+    margin: 0;
+    color: var(--background); }
   header .config-ico {
     --config-offset: 15px;
     cursor: pointer;
@@ -245,32 +258,36 @@ nav {
     flex-direction: column;
     align-items: flex-end; }
     nav .menu li {
-      margin-bottom: 5px;
-      border-radius: 4px;
-      background: #fdfffc;
-      text-align: center;
-      transition: var(--menu-transition);
-      height: var(--inactive-menu-size);
-      width: var(--inactive-menu-size);
-      box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
-      position: relative; }
-      nav .menu li::after {
-        content: "";
-        top: 0;
-        border-radius: 4px;
-        bottom: 0;
-        left: calc(100%);
-        z-index: -1;
-        position: absolute;
-        background: #fdfffc;
-        width: 0;
-        transition: all .15s ease-in-out .3s; }
+      width: 100%;
+      display: flex; }
       nav .menu li a {
-        opacity: 0;
-        text-decoration: none;
-        color: var(--inactive-background);
+        display: flex;
+        margin-bottom: 5px;
+        border-radius: 4px;
+        background: #fdfffc;
+        text-align: center;
         transition: var(--menu-transition);
-        line-height: var(--inactive-menu-size); }
+        height: var(--inactive-menu-size);
+        width: var(--inactive-menu-size);
+        box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+        position: relative; }
+        nav .menu li a::after {
+          content: "";
+          top: 0;
+          border-radius: 4px;
+          bottom: 0;
+          left: calc(100%);
+          z-index: -1;
+          position: absolute;
+          background: #fdfffc;
+          width: 0;
+          transition: all .15s ease-in-out .3s; }
+        nav .menu li a span {
+          opacity: 0;
+          text-decoration: none;
+          color: var(--inactive-background);
+          transition: var(--menu-transition);
+          line-height: var(--inactive-menu-size); }
     [nav="active"] nav .menu {
       --menu-transition: flex-grow .15s ease-in,
 								width .15s ease-in,
@@ -278,13 +295,13 @@ nav {
 								font-size .15s ease-out .3s;
       flex-grow: 1;
       font-size: .75em; }
-      [nav="active"] nav .menu li {
+      [nav="active"] nav .menu li a {
         width: 100%;
         height: var(--active-menu-size); }
-        [nav="active"] nav .menu li a {
+        [nav="active"] nav .menu li a span {
           opacity: 1;
           line-height: var(--active-menu-size); }
-        [nav="active"] nav .menu li::after {
+        [nav="active"] nav .menu li a::after {
           transition: all .15s ease-in-out;
           left: calc(100% + 5px);
           width: var(--inactive-menu-size); }
