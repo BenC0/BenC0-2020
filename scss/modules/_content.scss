@@ -2,7 +2,22 @@
 	display: flex;
 	
 	#main & {
-		text-align: center;
+		padding: 1em;
 		flex-direction: column;
+	}
+
+	section {
+		display: flex;
+		max-width: 990px;
+		flex-direction: column;
+
+		&::after {
+			content: "";
+			width: 100%;
+			height: 1em;
+			opacity: .15;
+			display: block;
+			border-top: 1px solid var(--font-color);
+		}
 	}
 }

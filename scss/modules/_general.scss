@@ -18,14 +18,20 @@ body {
 	font-family: var(--copy-font);
 	font-weight: var(--copy-font-weight);
 	
-	h1, h2, h3, h4, h5, h6 {
+	h2, h3, h4, h5, h6 {
+		line-height: 2;
+		font-weight: 600; 
 		margin-bottom: 1em;
+	}
+
+	h1 {
+		font-weight: bold;
 		font-family: var(--header-font);
 	}
 
 	@for $i from 1 through 6 {
 		h#{$i} {
-			font-size: 1.4em + (0.7 - ($i/10));
+			font-size: (1.7em - ($i/10));
 		}
 	}
 

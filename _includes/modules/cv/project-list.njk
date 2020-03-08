@@ -1,0 +1,12 @@
+<ul>
+	{% for project in projects %}
+	<li>
+		<h6>
+			{{ project.name }}
+		</h6>
+		{% for note in project.notes %}
+			<p class="note">{{ note | urlize | safe }}</p>
+		{% endfor %}
+	{% endfor %}
+	</li>
+</ul>

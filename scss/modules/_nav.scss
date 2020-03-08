@@ -1,13 +1,12 @@
 @import "./variables";
 
 nav {
-	left: 0;
-	right: 0;
-	bottom: 0;
-	position: fixed;
-	@include card(1);
+	bottom: 0px;
+	position: sticky;
+	grid-column: 1 / span 3;
 	background: var(--action-bar);
-	transition: var(--theme-transition);
+	transition: var(--theme-transition); 
+	@include card(1);
 
 	.content {
 		width: 100%;
@@ -74,6 +73,10 @@ nav {
 				margin-bottom: 5px;
 				border-radius: 4px;
 				background: #{$baby-powder};
+
+				body:not([nav="active"]) & {
+					pointer-events: none;
+				}
 
 				text-align: center;
 				transition: var(--menu-transition);

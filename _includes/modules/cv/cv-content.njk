@@ -5,189 +5,265 @@
 	</section>
 	<section id="languages">
 		<h2>Languages</h2>
-		<ul id="skills">
-			<li data-label="js">
-				<h3>JavaScript (and jQuery)</h3><span class="notes">use it daily</span>
-			</li>
-			<li data-label="html">
-				<h3>HTML5</h3><span class="notes">work with it daily</span>
-			</li>
-			<li data-label="css">
-				<h3>CSS3</h3><span class="notes">love it</span>
-			</li>
-			<li data-label="sass">
-				<h3>Sass</h3><span class="notes">it just makes sense.</span>
-			</li>
-			<li data-label="python">
-				<h3>Python</h3><span class="notes">bit rusty</span>
-			</li>
-		</ul>
+		{% set list_title = "skills" %}
+		{% set list_items = [
+			{
+				"label": "JavaScript (and jQuery)",
+				"note": "- use it daily"
+			},
+			{
+				"label": "HTML5",
+				"note": "- work with it daily"
+			},
+			{
+				"label": "CSS3",
+				"note": "- love it"
+			},
+			{
+				"label": "Sass",
+				"note": "- it just makes sense."
+			},
+			{
+				"label": "Python",
+				"note": ":snake::snake:"
+			}
+		] %}
+		{% include "./note-list.njk" %}
 	</section>
 	<section id="design">
 		<h2>Design Tools</h2>
-		<ul id="design_tools">
-			<li>
-				<h3>Adobe Photoshop</h3><span class="notes">mainly for UI design</span>
-			</li>
-			<li>
-				<h3>Adobe Illustrator</h3><span class="notes">for designing basic icons</span>
-			</li>
-		</ul>
+		{% set list_title = "design_tools" %}
+		{% set list_items = [
+			{
+				"label": "Adobe Photoshop",
+				"note": "- mainly for UI design"
+			},
+			{
+				"label": "Adobe Illustrator",
+				"note": " - for designing basic icons"
+			}
+		] %}
+		{% include "./note-list.njk" %}
 	</section>
 	<section id="ab_testing">
 		<h2>A/B Testing</h2>
 		<p>Testing small to large scale changes to the front end, analysing results and providing implementation guides</p>
-		<ul class="secondary_list">
-			<li data-label="true">
-				<h3>Tools Used</h3>
-			</li>
-			<li>
-				<h3>VWO</h3><span class="notes">Used daily for the last ~3 years</span>
-			</li>
-			<li>
-				<h3>Qubit</h3><span class="notes">Completed training day conducted by Qubit and passed exam afterwards</span>
-			</li>
-			<li>
-				<h3>Google Optimize 360</h3><span class="notes">Used for both A/B testing and Personalisation since the beta was released</span>
-			</li>
-			<li>
-				<h3>Sentient Ascend</h3><span class="notes">AI powered MVT tool, perfect for testing a large range of small scale changes both individually and combined</span>
-			</li>
-		</ul>
-		<ul class="secondary_list">
-			<li data-label="true">
-				<h3>Examples of Tests Built</h3><span class="note">(All tests built using JavaScript and CSS)</span>
-			</li>
-			<li>
-				<h3>Exit Intent Popups</h3><span class="note">Displaying a modal on the screen when a user displays exit intent behaviour.</span>
-			</li>
-			<li>
-				<h3>Site Search Engine</h3><span class="note">A bespoke search engine was developed entirely in JavaScript, using a function to calculate the levenshtein distance and return suggested search results. Though development was completed, this unfortunately never went live.</span>
-			</li>
-			<li>
-				<h3>Full Page Reskin</h3><span class="note">Often we would come across a webpage that needed a heavy duty make over in order to address a wide array of usability failings.</span>
-			</li>
-			<li>
-				<h3>Copy Alterations</h3><span class="note">Testing differences in the text on page to determine what level of information users required and how best to convey that information.</span>
-			</li>
-			<li>
-				<h3>Small, Miscellaneous Design Tweaks</h3><span class="note">Font size changes, background colours and other small, basic improvements.</span>
-			</li>
-		</ul>
+		<h6>Tools Used</h6>
+		{% set list_title = "design_tools" %}
+		{% set list_items = [
+			{
+				"label": "VWO",
+				"note": " - Used daily for the ~3.5 years"
+			},
+			{
+				"label": "Qubit",
+				"note": " - Completed training day conducted by Qubit and passed exam afterwards"
+			},
+			{
+				"label": "Google Optimize 360",
+				"note": " - Used for both A/B testing and Personalisation since the beta was released"
+			},
+			{
+				"label": "Sentient Ascend",
+				"note": " - AI powered MVT tool, perfect for testing a large range of small scale changes both individually and combined"
+			},
+			{
+				"label": "Monetate",
+				"note": " - ~1.5 years experience"
+			}
+		] %}
+		{% include "./note-list.njk" %}
+		<h6>Examples of Tests Built <small class="note">(All tests built using JavaScript and CSS)</small></h6>
+		{% set list_title = "text_examples" %}
+		{% set list_items = [
+			{
+				"label": "Exit Intent Popups",
+				"note": " - Displaying a modal on the screen when a user displays exit intent behaviour."
+			},
+			{
+				"label": "Site Search Engine",
+				"note": " - A bespoke search engine was developed entirely in JavaScript, using a function to calculate the levenshtein distance and return suggested search results. Though development was completed, this unfortunately never went live."
+			},
+			{
+				"label": "Full Page Reskin",
+				"note": " - Often we would come across a webpage that needed a heavy duty make over in order to address a wide array of usability failings."
+			},
+			{
+				"label": "Copy Alterations",
+				"note": " - Testing differences in the text on page to determine what level of information users required and how best to convey that information."
+			},
+			{
+				"label": "Small, Miscellaneous Design Tweaks",
+				"note": " - Font size changes, background colours and other small, basic improvements."
+			}
+		] %}
+		{% include "./note-list.njk" %}
 	</section>
 	<section id="user_behaviour">
 		<h2>UX Research</h2>
 		<p>Monitoring user behaviour and using findings to identify friction points within the user journey and improve usability and accessibility.</p>
-		<ul class="secondary_list">
-			<li data-label="true">
-				<h3>Tools Used</h3>
-			</li>
-			<li>
-				<h3>Hotjar</h3><span class="notes">Great tool for monitoring behaviour and gathering feedback, perfect for most websites</span>
-			</li>
-			<li>
-				<h3>SessionCam</h3><span class="notes">More advanced user behaviour recording tool, perfect for enterprise use</span>
-			</li>
-		</ul>
+		<h6>Tools Used</h6>
+		{% set list_title = "user_behaviour_tools" %}
+		{% set list_items = [
+			{
+				"label": "Hotjar",
+				"note": "- Great tool for monitoring behaviour and gathering feedback, perfect for most websites"
+			},
+			{
+				"label": "SessionCam",
+				"note": " - More advanced user behaviour recording tool, perfect for enterprise use"
+			}
+		] %}
+		{% include "./note-list.njk" %}
 	</section>
 	<section id="disciplines">
 		<h2>Additional Disciplines</h2>
-		<ul id="disciplines_list">
-			<li>
-				<h3>Site Speed Optimisation</h3><span class="notes">Improving key metrics to improve accessibility and SEO rankings</span>
-			</li>
-			<li>
-				<h3>Competitor Monitoring</h3><span class="notes">Keeping an eye on the competition using a variety of tools</span>
-			</li>
-			<li>
-				<h3>PPC Message Matching</h3><span class="notes">Ensuring consistency for users, aiding PPC Performance</span>
-			</li>
-			<li>
-				<h3>Personalisation</h3><span class="notes">Providing personalised offers and messaging to individual users</span>
-			</li>
-			<li>
-				<h3>Google Analytics</h3><span class="notes">Google Analytics Individual Qualification (GAIQ)</span>
-			</li>
-			<li>
-				<h3>Mentoring/Training</h3><span class="notes">Mentoring new starters and improving their skills in JavaScript, CSS and CRO is something that I enjoy. Whilst at iProspect I have been responsible for teaching several junior team members, as well as aiding more advanced team members where necessary.</span>
-			</li>
-		</ul>
+		{% set list_title = "disciplines_list" %}
+		{% set list_items = [
+			{
+				"label": "Hotjar",
+				"note": "- Great tool for monitoring behaviour and gathering feedback, perfect for most websites"
+			},
+			{
+				"label": "SessionCam",
+				"note": " - More advanced user behaviour recording tool, perfect for enterprise use"
+			},
+			{
+				"label": "Site Speed Optimisation",
+				"note": "- Improving key metrics to improve accessibility and SEO rankings"
+			},
+			{
+				"label": "Competitor Monitoring",
+				"note": "- Keeping an eye on the competition using a variety of tools"
+			},
+			{
+				"label": "PPC Message Matching",
+				"note": "- Ensuring consistency for users, aiding PPC Performance"
+			},
+			{
+				"label": "Personalisation",
+				"note": "- Providing personalised offers and messaging to individual users"
+			},
+			{
+				"label": "Google Analytics",
+				"note": "- Google Analytics Individual Qualification (GAIQ)"
+			},
+			{
+				"label": "Mentoring/Training",
+				"note": "- Mentoring new starters and improving their skills in JavaScript, CSS and CRO is something that I enjoy. Whilst at iProspect I have been responsible for teaching several junior team members, as well as aiding more advanced team members where necessary."
+			}
+		] %}
+		{% include "./note-list.njk" %}
 	</section>
 	<section id="clients">
 		<h2>Clients/Experience</h2>
 		<p>Over the last several years I've been fortunate enough to work on a wide variety of websites, from a single landing page for a new businesses to testing changes for multinational organisations. Below is a brief selection of websites I've spent a reasonable/significant amount of time working on.</p>
-		<ul>
-			<li>
-				<h3><a href="https://www.ambrosewilson.com/">Ambrose Wilson</a></h3>
-				<p class="note">Ambrose Wilson is an N Brown brand specialising in clothing for 65+ women. Other N Brown brands include Jacamo, Simply Be and JD Williams.</p>
-				<p class="note">During my time at N Brown I have been solely responsible for the testing and optimisation program for the Ambrose Wilson website. This has included planning out the testing roadmap, designing and developing A/B tests &amp; personalisation experiences, monitoring and analysing test data and reporting results to relevant stakeholders.</p>
-				<p class="note">CRO Strategy, A/B &amp; MVT Testing, Personalisation, Marketing Campaign Messaging, Report Automation, User Journey Mapping</p>
-				<p class="note">Monetate, Teradata</p>
-			</li>
-			<li>
-				<h3><a href="https://www.jurysinns.com/">Jurys Inn</a></h3><span class="note">Hotel chain specialising in city-centre locations across the UK (and a location in prague)</span>
-				<p class="note">A/B &amp; MVT Testing, Personalisation, Site Speed Optimisation, Exit Intent Messaging</p>
-				<p class="note">Google Optimize 360, VWO, Sentient Ascend</p>
-			</li>
-			<li>
-				<h3><a href="https://musicmagpie.co.uk/">Music Magpie</a> &amp; <a href="https://www.decluttr.com/">Decluttr</a></h3><span class="note">A recommerce business with brands in the US and UK. They both buy and sell a wide range of Tech, CD's, DVD's &amp; even Lego!</span>
-				<p class="note">A/B Testing, Social Proof Messaging, Exit Intent Messaging</p>
-				<p class="note">Google Optimize 360, VWO</p>
-			</li>
-			<li>
-				<h3><a href="https://www.motoring.co.uk/">Motoring.co.uk</a> &amp; MyMotoring</h3><span class="note">Motoring.co.uk is a website specialising in car news, reviews, valuations and comparisons. MyMotoring was a sister site that allows users to interact with one another and keep track of important information relating to their vehicle (such as MOT &amp; tax dates).</span>
-				<p class="note">Front End Development</p>
-				<p class="note">HTML, CSS, JavaScript, PHP</p>
-			</li>
-			<li>
-				<h3><a href="https://www.aspinaloflondon.com/">Aspinal of London</a></h3><span class="note">Aspinal of London is a London designer, manufacturer and retailer of luxury leather goods and accessories for men and women. Held in high regard by many celebrities and social influencers, their clientele includes models, actors and members of the royal family.</span>
-				<p class="note">A/B Testing, Personalisation, Site Speed Optimisation, Exit Intent Messaging</p>
-				<p class="note">Google Optimize 360, VWO, Qubit</p>
-			</li>
-			<li>
-				<h3><a href="https://m.barratthomes.co.uk">Barratt Homes</a>, <a href="https://m.barratthomes.co.uk">Barratt London</a>, <a href="https://m.dwh.co.uk/">DWH</a></h3><span class="note">Brands owned by Barratt Developments plc, one of the largest residential property development companies in the United Kingdom operating a network of over 30 divisions.</span>
-				<p class="note">A/B Testing, Feature Implementation Testing</p>
-				<p class="note">VWO</p>
-			</li>
-		</ul>
+		{% set clients = [
+			{
+				"link": "https://www.ambrosewilson.com/",
+				"name": "Ambrose Wilson",
+				"disciplines": "CRO Strategy, A/B & MVT Testing, Personalisation, Marketing Campaign Messaging, Report Automation, User Journey Mapping",
+				"tools": "Monetate, Teradata",
+				"languages": "HTML, CSS, JavaScript, SQL, Python",
+				"notes": [
+					"Ambrose Wilson is an N Brown brand specialising in clothing for 65+ women. Other N Brown brands include Jacamo, Simply Be and JD Williams.",
+					"During my time at N Brown I have been solely responsible for the testing and optimisation program for the Ambrose Wilson website. This has included planning out the testing roadmap, designing and developing A/B tests & personalisation experiences, monitoring and analysing test data and reporting results to relevant stakeholders."
+				]
+			},
+			{
+				"link": "https://www.jurysinns.com/",
+				"name": "Jurys Inn",
+				"disciplines": "A/B &amp; MVT Testing, Personalisation, Site Speed Optimisation, Exit Intent Messaging",
+				"tools": "Google Optimize 360, VWO, Sentient Ascend",
+				"languages": "HTML, CSS, JavaScript, PHP, Python",
+				"notes": [
+					"Hotel chain specialising in city-centre locations across the UK (and a location in prague)"
+				]
+			},
+			{
+				"link": "https://musicmagpie.co.uk/",
+				"name": "Music Magpie",
+				"disciplines": "A/B Testing, Social Proof Messaging, Exit Intent Messaging",
+				"tools": "Google Optimize 360, VWO",
+				"languages": "HTML, CSS, JavaScript, PHP",
+				"notes": ["An ecommerce business with brands in the US and UK. They both buy and sell a wide range of Tech, CD's, DVD's &amp; even Lego!"]
+			},
+			{
+				"link": "https://www.motoring.co.uk/",
+				"name": "Motoring.co.uk",
+				"disciplines": "Front End Development",
+				"tools": "",
+				"languages": "HTML, CSS, JavaScript, PHP",
+				"notes": ["Motoring.co.uk is a website specialising in car news, reviews, valuations and comparisons. MyMotoring was a sister site that allows users to interact with one another and keep track of important information relating to their vehicle (such as MOT &amp; tax dates)."]
+			},
+			{
+				"link": "https://www.aspinaloflondon.com/",
+				"name": "Aspinal of London",
+				"disciplines": "A/B Testing, Personalisation, Site Speed Optimisation, Exit Intent Messaging",
+				"tools": "Google Optimize 360, VWO, Qubit",
+				"languages": "HTML, CSS, JavaScript",
+				"notes": ["Aspinal of London is a London designer, manufacturer and retailer of luxury leather goods and accessories for men and women. Held in high regard by many celebrities and social influencers, their clientele includes models, actors and members of the royal family."]
+			},
+			{
+				"link": "https://m.barratthomes.co.uk",
+				"name": "Barratt Homes",
+				"disciplines": "A/B Testing, Feature Implementation Testing",
+				"tools": "VWO",
+				"languages": "HTML, CSS, JavaScript, PHP",
+				"notes": ["Brands owned by Barratt Developments plc, one of the largest residential property development companies in the United Kingdom operating a network of over 30 divisions."]
+			}
+		] %}
+		{% include "./client-list.njk" %}
 	</section>
 	<section id="sideprojects">
 		<h2>Side Projects</h2>
 		<p>I'm always looking for something new to work on, using my knowledge of Python and Web Development I've worked on a variety of side projects. I am currently, actively working on 2 side projects, these are:</p>
-		<ul>
-			<li>
-				<h3>loCRO</h3>
-				<h4>Local A/B Test Development Tool</h4><br>
-				<p class="note">A tool to allow A/B tests to be developed on a local version of a clients website. Built with python, the tool will scrape the desired webpage, store all assets locally and integrate your development enviroment with it. In my case, it allowed me to make use of node modules such as browser-sync, sass and babel.</p>
-				<p class="note">This tool not only speeds up development time by reducing time wasted on reloading the web page (which adds up to a suprising amount depending on the website) and also allows you to work offline, perfect for when travelling to meetings.</p>
-			</li>
-			<li>
-				<h3>Alice</h3>
-				<h4>SCSS Framework</h4><br>
-				<p class="note">Born out of my frustration of the over reliance of pre-existing frameworks such as Bootstrap, I am working on my own lightweight and highly customisable framework.</p>
-				<p class="note">Written in SCSS and reliant upon variables and modules, the developer is able to easily pick and choose what they need, whether it's a 8 or 12 column layout needed, flex or grid based, the developer can use as few modules as they need, reducing unnecessary markup which in turn reduces file sizes and improves site speed.</p>
-			</li>
-			<li>
-				<h3>This Site!</h3><br>
-				<p class="note">This site is always evolving, this design is actually the 7th since I started 5 years ago!</p>
-				<p class="note">The current version is hosted on AWS and the code is freely available for critique on <a href="https://github.com/BenC0/BenCo">Github</a></p>
-			</li>
-		</ul>
+		{% set projects = [
+			{
+				"name": "loCRO",
+				"notes": [
+					"Local A/B Test Development Tool",
+					"A tool to allow A/B tests to be developed on a local version of a clients website. Built with python, the tool will scrape the desired webpage, store all assets locally and integrate your development enviroment with it. In my case, it allowed me to make use of node modules such as browser-sync, sass and babel.",
+					"This tool not only speeds up development time by reducing time wasted on reloading the web page (which adds up to a suprising amount depending on the website) and also allows you to work offline, perfect for when travelling to meetings."
+				]
+			},
+			{
+				"name": "Alice",
+				"notes": [
+					"SCSS Framework",
+					"Born out of my frustration of the over reliance of pre-existing frameworks such as Bootstrap, I am working on my own lightweight and highly customisable framework.",
+					"Written in SCSS and reliant upon variables and modules, the developer is able to easily pick and choose what they need, whether it's a 8 or 12 column layout needed, flex or grid based, the developer can use as few modules as they need, reducing unnecessary markup which in turn reduces file sizes and improves site speed."
+				]
+			},
+			{
+				"name": "This Site!",
+				"notes": [
+					"This site is always evolving, this design is actually the 8th since I started 5 years ago!",
+					"The current version is served through Netlify and linked to the repo at https://github.com/BenC0/BenC0-2020"
+				]
+			}
+		] %}
+		{% include "./project-list.njk" %}
 		<p>In addition to the above projects, I have also created prototype versions of the below projects.</p>
-		<ul>
-			<li>
-				<h3>Social Proof Messaging</h3>
-				<h4>Project used in A/B tests whilst working for iProspect</h4><br>
-				<p class="note">Built in PHP and JavaScript, this tool logs custom events to a database using a purpose built API and returns relevant information to be displayed back to the user.</p>
-				<p class="note">The tool was used to display messaging such as "X people have bought this in the last Y hours"</p>
-			</li>
-			<li>
-				<h3>enCapture</h3>
-				<h4>Exit intent behaviour triggered popups</h4><br>
-				<p class="note">Whilst at iProspect I aided in the development of a JavaScript function that detects exit intent behaviour and displays a popup modal to user, highlighting an offering or the website KSP's to retain the user's interest and aid them in progressing further down the funnel.</p>
-				<p class="note"><small>PS - I also created a CSS only version that is limited in terms of interactivity with the modal but functionally similar. View it on <a href="https://codepen.io/Benco/pen/JpxXNo">CodePen</a></small></p>
-			</li>
-		</ul>
+		{% set projects = [
+			{
+				"name": "Social Proof Messaging",
+				"notes": [
+					"Project used in A/B tests whilst working for iProspect",
+					"Built in PHP and JavaScript, this tool logs custom events to a database using a purpose built API and returns relevant information to be displayed back to the user.",
+					"The tool was used to display messaging such as \"X people have bought this in the last Y hours\""
+				]
+			},
+			{
+				"name": "enCapture",
+				"notes": [
+					"Exit intent behaviour triggered popups",
+					"Whilst at iProspect I aided in the development of a JavaScript function that detects exit intent behaviour and displays a popup modal to user, highlighting an offering or the website KSP's to retain the user's interest and aid them in progressing further down the funnel.",
+					"I also created a CSS only version that is limited in terms of interactivity with the modal but functionally similar. View it at https://codepen.io/Benco/pen/JpxXNo"
+				]
+			}
+		] %}
+		{% include "./project-list.njk" %}
 		<p>There are loads of small projects done for the purpose of curiosity and learning on my <a href="https://codepen.io/Benco/">Codepen</a>.</p>
 	</section>
 </div>

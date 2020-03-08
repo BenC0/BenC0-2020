@@ -1,0 +1,21 @@
+<ul>
+	{% for client in clients %}
+	<li>
+		<h6>
+			<a href="{{ client.link }}">{{ client.name }}</a>
+		</h6>
+		{% for note in client.notes %}
+			<p class="note">{{ note }}</p>
+		{% endfor %}
+		{% if client.disciplines != "" %}
+			<p class="note">Disciplines: {{ client.disciplines }}</p>
+		{% endif %}
+		{% if client.tools != "" %}
+			<p class="note">Tools: {{ client.tools }}</p>
+		{% endif %}
+		{% if client.languages != "" %}
+			<p class="note">Languages: {{ client.languages }}</p>
+		{% endif %}
+	{% endfor %}
+	</li>
+</ul>

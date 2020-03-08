@@ -1,0 +1,7 @@
+<ul id="{{ list_title }}">
+	{% for item in list_items %}
+		<li data-label="js">
+			<p>{{ item.label }} <small class="notes">{{ item.note }}</small></p>
+		</li>
+	{% endfor %}
+</ul>

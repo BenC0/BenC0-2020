@@ -95,7 +95,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   --theme-2-font: #011627;
   --theme-2-background: #2a9d8f;
   --theme-2-action-bar: #2ec4b6;
-  --header-height: 100px;
+  --header-height: 60px;
   --header-font: Fredoka One, cursive;
   --copy-font: Comfortaa, cursive;
   --copy-font-weight: 400;
@@ -123,21 +123,25 @@ body {
   @media screen and (max-width: 768px) {
     body {
       --body-layout-cols: 10px 1fr 10px; } }
-  body h1, body h2, body h3, body h4, body h5, body h6 {
-    margin-bottom: 1em;
+  body h2, body h3, body h4, body h5, body h6 {
+    line-height: 2;
+    font-weight: 600;
+    margin-bottom: 1em; }
+  body h1 {
+    font-weight: bold;
     font-family: var(--header-font); }
   body h1 {
-    font-size: 2em; }
-  body h2 {
-    font-size: 1.9em; }
-  body h3 {
-    font-size: 1.8em; }
-  body h4 {
-    font-size: 1.7em; }
-  body h5 {
     font-size: 1.6em; }
-  body h6 {
+  body h2 {
     font-size: 1.5em; }
+  body h3 {
+    font-size: 1.4em; }
+  body h4 {
+    font-size: 1.3em; }
+  body h5 {
+    font-size: 1.2em; }
+  body h6 {
+    font-size: 1.1em; }
   body * {
     box-sizing: border-box; }
   body p {
@@ -206,13 +210,12 @@ header {
       transform: rotate(-5deg); }
 
 nav {
-  left: 0;
-  right: 0;
-  bottom: 0;
-  position: fixed;
-  box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+  bottom: 0px;
+  position: sticky;
+  grid-column: 1 / span 3;
   background: var(--action-bar);
-  transition: var(--theme-transition); }
+  transition: var(--theme-transition);
+  box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12); }
   nav .content {
     width: 100%;
     display: flex;
@@ -271,6 +274,8 @@ nav {
         width: var(--inactive-menu-size);
         box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
         position: relative; }
+        body:not([nav="active"]) nav .menu li a {
+          pointer-events: none; }
         nav .menu li a::after {
           content: "";
           top: 0;
