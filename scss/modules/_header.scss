@@ -1,3 +1,56 @@
 header {
-	display: none;
+	grid-row: 1;
+	display: flex;
+	@include card(1);
+	background: var(--action-bar);
+	transition: var(--theme-transition);
+	position: relative;
+	text-align: center;
+	flex-direction: column;
+	grid-column: 1 / span 3;
+	justify-content: center;
+
+	h1 {
+		margin: 0;
+	}
+	
+	.config-ico {
+		--config-offset: 15px;
+
+		cursor: pointer;
+		position: absolute;
+		top: var(--config-offset);
+		right: var(--config-offset);
+		svg {
+			--config-size: 44px;
+			width: var(--config-size);
+			height: var(--config-size);
+
+			path {
+				fill: var(--font-color);
+				transition: all .15s ease-in-out;
+
+				&:first-child {
+					transform-origin: 38% 50%;
+				}
+
+				&:last-child {
+					transform-origin: 38% 50%;
+				}
+			}
+		}
+
+		&:hover {
+			#Config-Icon {
+				path {
+					&:first-child {
+						transform: rotate(45deg);
+					}
+					&:last-child {
+						transform: rotate(-5deg);
+					}
+				}
+			}
+		}
+	}
 }

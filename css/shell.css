@@ -95,25 +95,29 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   --theme-2-font: #011627;
   --theme-2-background: #2a9d8f;
   --theme-2-action-bar: #2ec4b6;
+  --header-height: 100px;
   --header-font: Fredoka One, cursive;
   --copy-font: Comfortaa, cursive;
-  --copy-font-weight: 300;
+  --copy-font-weight: 400;
   --body-layout-cols: 10px 1fr 10px;
   --grid-layout-cols: repeat(8, 1fr);
   --grid-layout-cols-gap: 15px;
+  --body-layout-rows: var(--header-height) auto;
   --background-gradient: #f0e6e6;
   --theme-transition: all .15s ease-out; }
 
 body {
+  padding: 0;
   display: grid;
   font-size: 24px;
   min-height: 100vh;
-  padding: 10vh 0 10px;
   box-sizing: border-box;
   color: var(--font-color);
   transition: var(--theme-transition);
   background: var(--background);
   grid-template-columns: var(--body-layout-cols);
+  grid-template-rows: var(--body-layout-rows);
+  grid-row-gap: 1em;
   font-family: var(--copy-font);
   font-weight: var(--copy-font-weight); }
   @media screen and (max-width: 768px) {
@@ -154,7 +158,39 @@ body {
     background: linear-gradient(10deg, transparent, var(--background-gradient)); }
 
 header {
-  display: none; }
+  grid-row: 1;
+  display: flex;
+  box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+  background: var(--action-bar);
+  transition: var(--theme-transition);
+  position: relative;
+  text-align: center;
+  flex-direction: column;
+  grid-column: 1 / span 3;
+  justify-content: center; }
+  header h1 {
+    margin: 0; }
+  header .config-ico {
+    --config-offset: 15px;
+    cursor: pointer;
+    position: absolute;
+    top: var(--config-offset);
+    right: var(--config-offset); }
+    header .config-ico svg {
+      --config-size: 44px;
+      width: var(--config-size);
+      height: var(--config-size); }
+      header .config-ico svg path {
+        fill: var(--font-color);
+        transition: all .15s ease-in-out; }
+        header .config-ico svg path:first-child {
+          transform-origin: 38% 50%; }
+        header .config-ico svg path:last-child {
+          transform-origin: 38% 50%; }
+    header .config-ico:hover #Config-Icon path:first-child {
+      transform: rotate(45deg); }
+    header .config-ico:hover #Config-Icon path:last-child {
+      transform: rotate(-5deg); }
 
 nav {
   left: 0;

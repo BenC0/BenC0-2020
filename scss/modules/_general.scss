@@ -1,13 +1,15 @@
 body {
+	padding: 0;
 	display: grid;
 	font-size: 24px;
 	min-height: 100vh;
-	padding: 10vh 0 10px;
 	box-sizing: border-box;
 	color: var(--font-color);
 	transition: var(--theme-transition);
 	background: var(--background);
 	grid-template-columns: var(--body-layout-cols);
+	grid-template-rows: var(--body-layout-rows);
+	grid-row-gap: 1em;
 	
 	@media screen and (max-width: 768px) {
 		--body-layout-cols: 10px 1fr 10px;

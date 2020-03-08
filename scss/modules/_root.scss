@@ -12,6 +12,7 @@
 	--theme-2-background: #{$jungle-green};
 	--theme-2-action-bar: #{$maximum-blue-green};
 
+	--header-height: 100px;
 	--header-font: #{$header-font};
 	--copy-font: #{$copy-font};
 	--copy-font-weight: #{$copy-font-weight};
@@ -19,6 +20,7 @@
 	--body-layout-cols: 10px 1fr 10px;
 	--grid-layout-cols: repeat(8, 1fr);
 	--grid-layout-cols-gap: 15px;
+	--body-layout-rows: var(--header-height) auto;
 	
 	--background-gradient: #{$white};
 
