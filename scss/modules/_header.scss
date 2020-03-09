@@ -4,7 +4,9 @@ header {
 	@include card(1);
 	background: var(--action-bar);
 	transition: var(--theme-transition);
-	position: relative;
+	
+	top: 0px;
+	position: sticky;
 	text-align: center;
 	flex-direction: column;
 	grid-column: 1 / span 3;

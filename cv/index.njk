@@ -1,5 +1,9 @@
 {% extends "../_includes/shell.njk" %}
 
+{% block body_page_attr %}
+article
+{% endblock %}
+
 {% block styles %}
 	{{ super() }}
 	<link rel="stylesheet" href="{{ '/css/cv.css' | url }}">

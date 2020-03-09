@@ -11,7 +11,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Comfortaa:300|Fredoka+One&display=swap" rel="stylesheet">
 	{% endblock %}
 </head>
-<body nav="inactive" theme="night">
+<body nav="inactive" theme="night" page="{% block body_page_attr %} home {% endblock %}">
 	{% include "./modules/header.njk" %}
 	<section id="main">
 		{% block content %}
