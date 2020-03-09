@@ -1,5 +1,6 @@
 header {
 	grid-row: 1;
+	z-index: 10;
 	display: flex;
 	@include card(1);
 	background: var(--action-bar);
