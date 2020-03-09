@@ -1,0 +1,18 @@
+<div class="anchor-link-container">
+	<div class="anchor-link-icon">
+		<span>ANCHOR</span>
+	</div>
+</div>
+<script>
+	function handle_anchors() {
+		let anchors = document.querySelectorAll('.anchor-link')
+		let anchor_container = document.querySelector('.anchor-link-container')
+		if (anchors.length !== 0) {
+			anchors.forEach(anchor => {
+				console.log(anchor)
+			})
+		}
+	}
+
+	handle_anchors()
+</script>

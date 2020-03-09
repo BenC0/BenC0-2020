@@ -8,7 +8,7 @@
 	<meta name="theme-color" content="#011627">
 	{% block styles %}
 		<link rel="stylesheet" href="{{ '/css/shell.css' | url }}">
-		<link href="https://fonts.googleapis.com/css?family=Comfortaa:300|Fredoka+One&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Material+Icons&display=swap" rel="stylesheet">
 	{% endblock %}
 </head>
 <body nav="inactive" theme="night" page="{% block body_page_attr %} home {% endblock %}">
@@ -20,7 +20,17 @@
 			</div>
 		{% endblock %}
 	</section>
-	{% include "./modules/menu.njk" %}
+	<nav>
+		<div class="content">
+			<div class="theme_swapper">
+				<div class="swatch"></div>
+				<div class="swatch"></div>
+			</div>
+			{% block menu %}
+				{% include "./modules/menu.njk" %}
+			{% endblock %}
+		</div>
+	</nav>
 	<script src="{{ '/js/index.js' | url }}"></script>
 </body>
 </html>

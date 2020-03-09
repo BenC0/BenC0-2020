@@ -14,7 +14,7 @@ function changeThemeColor() {
 
 document.querySelector('nav .theme_swapper').addEventListener('click', changeThemeColor)
 
-document.querySelector('nav .menu').addEventListener('click', _ => {
-    let navStateToggled = document.body.getAttribute('nav') === "active" ? "inactive" : "active"
-	document.body.setAttribute('nav', navStateToggled)
-})
+// document.querySelector('nav .menu').addEventListener('click', _ => {
+//     let navStateToggled = document.body.getAttribute('nav') === "active" ? "inactive" : "active"
+// 	document.body.setAttribute('nav', navStateToggled)
+// })
