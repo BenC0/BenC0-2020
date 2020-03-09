@@ -1,12 +1,14 @@
 {% extends "./_includes/shell.njk" %}
 
+{% block body_page_attr %}
+article
+{% endblock %}
+
 {% block styles %}
 	{{ super() }}
-	<link rel="stylesheet" href="{{ '/css/index.css' | url }}">
+	<link rel="stylesheet" href="{{ '/css/cv.css' | url }}">
 {% endblock %}
 
 {% block content %}
-	<div class="content">
-		<h1>hello world</h1>
-	</div>
+	{% include "./_includes/modules/cv/cv-content.njk" %}
 {% endblock %}
