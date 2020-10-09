@@ -19,3 +19,23 @@
 		}
 	}
 }
+
+@media print {
+	header {
+		position: relative;
+		background: transparent;
+		box-shadow: 0 0 BLACK;
+		text-align: left;
+		max-width: 990px;
+		margin: 40px auto;
+		width: 100%;
+	}
+
+	* {
+	    color: black !important;
+	}
+
+	a {
+	    color: blue !important;
+	}
+}
